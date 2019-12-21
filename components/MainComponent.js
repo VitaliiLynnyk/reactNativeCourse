@@ -7,13 +7,15 @@ import { Icon } from 'react-native-elements';
 
 import Menu from './MenuComponent';
 import Home from './HomeComponent';
+import Contact from './ContactComponent';
 import Dishdetail from './DishdetailComponent';
 import { DISHES } from '../shared/dishes';
 
 const StackMenuNavigator = createStackNavigator(
   {
     Menu: { screen: Menu },
-    Dishdetail: { screen: Dishdetail }
+    Dishdetail: { screen: Dishdetail },
+    Contact: { screen: Contact }
   },
   {
     initialRouteName: 'Menu',
@@ -63,6 +65,13 @@ const MainDrawerNavigator = createDrawerNavigator(
       navigationOptions: {
         title: 'Menu',
         drawerLabel: 'Menu'
+      }
+    },
+    Contact: {
+      screen: Contact,
+      navigationOptions: {
+        title: 'Contact',
+        drawerLabel: 'Contact'
       }
     }
   },
