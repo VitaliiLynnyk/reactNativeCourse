@@ -3,14 +3,13 @@ import { View, Platform } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { createStackNavigator } from 'react-navigation-stack';
-import { Icon } from 'react-native-elements';
 
 import Menu from './MenuComponent';
 import Home from './HomeComponent';
 import Contact from './ContactComponent';
 import About from './AboutComponent';
 import Dishdetail from './DishdetailComponent';
-import { DISHES } from '../shared/dishes';
+import { dishes } from '../shared/dishes';
 
 const StackMenuNavigator = createStackNavigator(
   {
@@ -95,7 +94,7 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dishes: DISHES,
+      dishes: dishes,
       selectedDish: null
     };
   }

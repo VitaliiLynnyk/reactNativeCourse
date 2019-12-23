@@ -5,12 +5,9 @@ import { ListItem } from 'react-native-elements';
 import { dishes } from '../shared/dishes';
 
 class Menu extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      dishes: dishes
-    };
-  }
+  state = {
+    dishes: dishes
+  };
 
   static navigationOptions = {
     title: 'Menu'
