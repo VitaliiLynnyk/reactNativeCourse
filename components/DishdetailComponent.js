@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 import { Card } from 'react-native-elements';
 
-import { DISHES } from '../shared/dishes';
+import { dishes } from '../shared/dishes';
 
 function RenderDish(props) {
   const dish = props.dish;
@@ -25,7 +25,7 @@ class Dishdetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dishes: DISHES
+      dishes: dishes
     };
   }
 
