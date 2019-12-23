@@ -36,7 +36,6 @@ class About extends Component {
   render() {
     const AboutComponent = ({ item, index }) => {
       const { image, name, description } = item;
-      const testUrl = `require(./images/alberto.png)`;
 
       return (
         <ListItem
@@ -44,7 +43,7 @@ class About extends Component {
           title={name}
           subtitle={description}
           hideChevron={true}
-          leftAvatar={{ source: testUrl }}
+          leftAvatar={{ source: require('./images/alberto.png') }}
         />
       );
     };
