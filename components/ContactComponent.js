@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import { Card } from 'react-native-elements';
+
+function RenderContact(props) {
+  const { contactArray } = props;
+
+  return (
+    <View>
+      {contactArray.map((el, index) => (
+        <Text style={{ margin: 10 }} key={index}>
+          {el}
+        </Text>
+      ))}
+    </View>
+  );
+}
 
 class Contact extends Component {
   static navigationOptions = {
@@ -8,7 +22,7 @@ class Contact extends Component {
   };
 
   render() {
-    const info = [
+    const contactArray = [
       '121, Clear Water Bay Road',
       'Clear Water Bay, Kowloon',
       'HONG KONG',
@@ -19,11 +33,7 @@ class Contact extends Component {
 
     return (
       <Card featuredTitle={'Contact Information'}>
-        {info.map((el, index) => (
-          <Text style={{ margin: 10 }} key={index}>
-            {el}
-          </Text>
-        ))}
+        <RenderContact contactArray={contactArray} />
       </Card>
     );
   }
