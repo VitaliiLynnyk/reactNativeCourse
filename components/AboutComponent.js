@@ -24,6 +24,21 @@ function History() {
   );
 }
 
+function AboutComponent({ item, index }) {
+  const { imageUrl, name, description } = item;
+
+  return (
+    <ListItem
+      key={index}
+      title={name}
+      subtitle={description}
+      hideChevron={true}
+      leftAvatar={{ source: require('./images/alberto.png') }}
+      leftAvatar={{ source: require(`${imageUrl}`) }}
+    />
+  );
+}
+
 class About extends Component {
   state = {
     leaders: leaders
@@ -34,20 +49,6 @@ class About extends Component {
   };
 
   render() {
-    const AboutComponent = ({ item, index }) => {
-      const { image, name, description } = item;
-
-      return (
-        <ListItem
-          key={index}
-          title={name}
-          subtitle={description}
-          hideChevron={true}
-          leftAvatar={{ source: require('./images/alberto.png') }}
-        />
-      );
-    };
-
     return (
       <ScrollView>
         <History />
